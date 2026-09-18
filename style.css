@@ -1,0 +1,966 @@
+:root {
+    --space-dark: #071426;
+    --space-blue: #0b2038;
+    --panel-blue: #102c49;
+    --panel-light: #173b5d;
+
+    --electric-blue: #3da9ff;
+    --orange: #ff8a3d;
+    --orange-light: #ffb067;
+
+    --white: #f4f7fb;
+    --text-light: #c9d7e6;
+    --text-muted: #8fa6bc;
+
+    --glass: rgba(255, 255, 255, 0.08);
+    --border: rgba(61, 169, 255, 0.25);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(61, 169, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255, 138, 61, 0.13),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #071426 0%,
+            #0b2038 55%,
+            #101c2d 100%
+        );
+
+    color: var(--white);
+
+    font-family: Arial, sans-serif;
+}
+
+
+button,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.container {
+    width: min(1050px, calc(100% - 30px));
+    margin: 35px auto 50px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hero {
+    width: min(1050px, calc(100% - 30px));
+    margin: 35px auto 30px;
+}
+
+.hero-inner {
+    width: 100%;
+}
+
+.eyebrow {
+    color: var(--electric-blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    margin-bottom: 6px;
+}
+
+h1 {
+    margin: 0 0 7px;
+    color: var(--white);
+    font-size: clamp(28px, 5vw, 43px);
+}
+
+.hero p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+.counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 15px;
+    padding: 10px 15px;
+
+    background: rgba(16, 44, 73, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+
+    white-space: nowrap;
+
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+#materialCount {
+    color: var(--orange);
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.hint-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin: 25px 0;
+    padding: 18px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background: rgba(16, 44, 73, 0.72);
+
+    color: var(--text-light);
+}
+
+.hint-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.hint-box strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.hint-box p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.pair-number {
+    display: inline-block;
+    margin-top: 4px;
+
+    color: var(--orange);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   LABORATORY
+========================================================= */
+
+.laboratory {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+
+    gap: 22px;
+    align-items: end;
+}
+
+
+/* =========================================================
+   MATERIAL CARD
+========================================================= */
+
+.material-card {
+    position: relative;
+
+    background: rgba(16, 44, 73, 0.82);
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    padding: 20px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.side-label {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 138, 61, 0.16);
+    color: var(--orange);
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.card-header h2 {
+    margin: 0;
+
+    color: var(--white);
+
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--text-light);
+
+    font-weight: 800;
+}
+
+select {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: #f4f7fb;
+    color: #162333;
+
+    font-size: 14px;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 138, 61, 0.18);
+}
+
+
+/* =========================================================
+   BOTTLE
+========================================================= */
+
+.bottle-area {
+    height: 285px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding-top: 20px;
+}
+
+.bottle {
+    position: relative;
+
+    width: 150px;
+    height: 250px;
+}
+
+
+/* =========================================================
+   CAP
+========================================================= */
+
+.cap {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 46px;
+    height: 15px;
+
+    transform: translateX(-50%);
+
+    background: #858b90;
+
+    border-radius: 6px 6px 3px 3px;
+
+    z-index: 6;
+}
+
+
+/* =========================================================
+   NECK
+========================================================= */
+
+.neck {
+    position: absolute;
+
+    top: 12px;
+    left: 50%;
+
+    width: 62px;
+    height: 73px;
+
+    transform: translateX(-50%);
+
+    border: 3px solid #858b90;
+    border-bottom: 0;
+
+    border-radius: 12px 12px 0 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.7)
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   BOTTLE BODY
+========================================================= */
+
+.bottle-body {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 180px;
+
+    border: 3px solid #858b90;
+
+    border-radius: 22px 22px 34px 34px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.82),
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.68)
+        );
+
+    z-index: 3;
+}
+
+.bottle-body::before {
+    content: "";
+
+    position: absolute;
+
+    top: 7px;
+    bottom: 7px;
+    left: 10px;
+
+    width: 10px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LIQUID
+========================================================= */
+
+.liquid {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 70%;
+
+    background: #dfe9ef;
+
+    opacity: 0.9;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
+
+    transition:
+        background 0.25s ease,
+        height 0.25s ease;
+
+    z-index: 1;
+}
+
+.liquid::before {
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: 7px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.32);
+}
+
+
+/* =========================================================
+   MEASUREMENT MARKS
+========================================================= */
+
+.marks {
+    position: absolute;
+
+    top: 0;
+    right: 7px;
+    bottom: 0;
+
+    width: 42px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 25px 0;
+
+    z-index: 7;
+
+    pointer-events: none;
+}
+
+.marks span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 4px;
+
+    width: 100%;
+
+    color: rgba(55, 55, 55, 0.72);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+.marks span::before {
+    content: "";
+
+    width: 10px;
+    height: 1px;
+
+    background: rgba(65, 65, 65, 0.55);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MATERIAL NAME
+========================================================= */
+
+.material-name {
+    margin-top: 12px;
+
+    color: var(--white);
+
+    font-size: 15px;
+    font-weight: 900;
+
+    text-align: center;
+}
+
+.formula-label {
+    margin-top: 4px;
+
+    color: var(--electric-blue);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MIX
+========================================================= */
+
+.mix-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding-bottom: 50px;
+}
+
+.plus {
+    color: var(--text-light);
+
+    font-size: 27px;
+
+    margin-bottom: 10px;
+}
+
+.mix-button {
+    width: 100px;
+    height: 52px;
+
+    border: 0;
+    border-radius: 14px;
+
+    background: var(--orange);
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px rgba(255, 138, 61, 0.28);
+}
+
+.mix-button:hover {
+    filter: brightness(1.08);
+}
+
+.mix-button:active {
+    transform: translateY(1px);
+}
+
+.mix-description {
+    margin-top: 9px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-message {
+    color: #ff8b8b;
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result-section {
+    margin-top: 30px;
+    padding: 28px;
+
+    background: rgba(16, 44, 73, 0.82);
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.hidden {
+    display: none;
+}
+
+.result-heading {
+    color: var(--electric-blue);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+}
+
+.result-section h2 {
+    margin: 4px 0;
+
+    color: var(--white);
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   RESULT BOTTLE
+========================================================= */
+
+.result-bottle-area {
+    height: 290px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.result-bottle {
+    width: 165px;
+    height: 265px;
+}
+
+.result-bottle .cap {
+    width: 50px;
+}
+
+.result-bottle .neck {
+    width: 68px;
+    height: 78px;
+}
+
+.result-bottle .bottle-body {
+    height: 190px;
+}
+
+
+/* =========================================================
+   PRECIPITATE
+========================================================= */
+
+.precipitate {
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+    bottom: 0;
+
+    height: 22%;
+
+    background: #deded9;
+
+    border-radius: 45% 45% 10px 10px;
+
+    opacity: 0;
+
+    z-index: 4;
+
+    transition: opacity 0.25s ease;
+}
+
+.precipitate.active,
+.precipitate.show {
+    opacity: 0.96;
+}
+
+
+/* =========================================================
+   GAS
+========================================================= */
+
+.gas {
+    position: absolute;
+
+    left: 15%;
+    right: 15%;
+    top: 12%;
+    bottom: 20%;
+
+    opacity: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    transition: opacity 0.25s ease;
+}
+
+.gas.active,
+.gas.show {
+    opacity: 1;
+}
+
+.gas span {
+    position: absolute;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.gas span:nth-child(1) {
+    width: 13px;
+    height: 13px;
+
+    left: 15%;
+    bottom: 10%;
+}
+
+.gas span:nth-child(2) {
+    width: 9px;
+    height: 9px;
+
+    left: 43%;
+    bottom: 28%;
+}
+
+.gas span:nth-child(3) {
+    width: 16px;
+    height: 16px;
+
+    left: 67%;
+    bottom: 8%;
+}
+
+.gas span:nth-child(4) {
+    width: 8px;
+    height: 8px;
+
+    left: 34%;
+    bottom: 57%;
+}
+
+.gas span:nth-child(5) {
+    width: 11px;
+    height: 11px;
+
+    left: 73%;
+    bottom: 53%;
+}
+
+
+/* =========================================================
+   OBSERVATION
+========================================================= */
+
+.observation-box {
+    max-width: 760px;
+
+    margin: 18px auto 12px;
+    padding: 20px;
+
+    border: 1px solid rgba(61, 169, 255, 0.2);
+    border-radius: 16px;
+
+    background: rgba(7, 20, 38, 0.65);
+
+    color: var(--text-light);
+}
+
+.observation-box p {
+    margin: 8px 0 0;
+
+    color: var(--text-light);
+
+    line-height: 1.9;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INFO BOX
+========================================================= */
+
+.info-box {
+    max-width: 760px;
+
+    margin: 12px auto;
+    padding: 18px;
+
+    border: 1px solid rgba(255, 138, 61, 0.22);
+    border-radius: 15px;
+
+    background: rgba(7, 20, 38, 0.55);
+}
+
+.box-label {
+    color: var(--orange);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 0.13em;
+
+    margin-bottom: 8px;
+}
+
+.equation {
+    margin: 0;
+
+    color: var(--white);
+
+    font-size: 20px;
+    font-weight: 900;
+
+    overflow-wrap: anywhere;
+}
+
+.info-box p:not(.equation) {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   NEW EXPERIMENT
+========================================================= */
+
+.new-button {
+    margin-top: 15px;
+
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: transparent;
+
+    color: var(--electric-blue);
+
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.new-button:hover {
+    background: rgba(61, 169, 255, 0.1);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: min(1050px, calc(100% - 30px));
+
+    margin: 22px auto;
+
+    text-align: center;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+    .container,
+    .hero,
+    footer {
+        width: calc(100% - 18px);
+    }
+
+    .hero {
+        margin-top: 18px;
+    }
+
+    .laboratory {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .mix-column {
+        order: 3;
+
+        padding: 5px 0 15px;
+
+        flex-direction: row;
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    .plus {
+        margin: 0;
+    }
+
+    .mix-description {
+        margin-top: 0;
+    }
+
+    .material-card {
+        padding: 16px;
+    }
+
+    .bottle-area {
+        height: 275px;
+    }
+
+    .result-section {
+        padding: 20px 14px;
+    }
+
+    .result-bottle-area {
+        height: 285px;
+    }
+
+    .equation {
+        font-size: 16px;
+    }
+
+    .hint-box {
+        margin: 18px 0;
+    }
+}
